@@ -10,8 +10,8 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 // najszerszy możliwy dostęp - bez obiektu, dostępnne zewsząd
 public final class Display {
 
-    private static final int DEFAULT_WIDTH = 800;
-    private static final int DEFAULT_HEIGHT = 800;
+    private static final int DEFAULT_WIDTH = 1600;
+    private static final int DEFAULT_HEIGHT = 1000;
 
     private static int width;
     private static int height;
