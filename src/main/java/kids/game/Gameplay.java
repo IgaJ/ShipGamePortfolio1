@@ -9,15 +9,15 @@ public class Gameplay {
     }
 
     public void render(Graphics g) {
-        int widthPosition = (int) (Display.getWidth() * 0.333); //p = 33% szer. okna
+        int widthPosition = (int) (Display.getWidth() * 0.333); // 33% szer. okna
         int heightPosition = (int) (Display.getHeight() * 0.333);
 
         double widthFactor = 0.1;
         int cardWidth = (int) (Display.getHeight()* widthFactor);
-        double heightFactor = 0.2;
+        double heightFactor = 0.15;
         int cardHeight = (int) (Display.getHeight()* heightFactor);
         double separationWidthFactor = 0.009;
-        double separationHeightFactor = 0.009;
+        double separationHeightFactor = 0.015;
         int separationWidth = (int) (Display.getWidth() * separationWidthFactor + cardWidth);
         int separationHeight = (int) (Display.getHeight() * separationHeightFactor + cardHeight);
 
@@ -30,23 +30,28 @@ public class Gameplay {
         g.drawRect(widthPosition+separationWidth, heightPosition+separationHeight, cardWidth,cardHeight); // karta dolna 2
         g.drawRect(widthPosition+(separationWidth*2), heightPosition+separationHeight, cardWidth,cardHeight); // karta dolna 3
 
-        /*//g.drawRect(p+140, 390, 70, 90); // obszar na działa
-        g.drawRect(widthPosition+150, 400, cardWidth, cardHeight); // działo 1
-        g.drawRect(widthPosition+160, 410, cardWidth, cardHeight); // działo 2
+        // działa
+        g.drawRect(widthPosition, (int) (heightPosition - separationHeight*0.7), cardHeight, cardWidth); // działo 1, cardHeight celowo zaminione z cardWidth
+        g.drawRect(widthPosition+(int) (separationWidth*1.45), (int) (heightPosition - separationHeight*0.7), cardHeight, cardWidth); // działo 2, cardHeight celowo zaminione z cardWidth
 
-        //g.drawRect(p+220, 390, 80, 100); // obszar na monety
-        g.drawRect(widthPosition+230, 400, cardWidth, cardHeight); // moneta 1
-        g.drawRect(widthPosition+240, 410, cardWidth, cardHeight); // moneta 2
-        g.drawRect(widthPosition+250, 420, cardWidth, cardHeight); // moneta 3
+        // monety
+        double separationWidthCoinFactor = widthPosition * 0.03;
+        double separationHeightCoinFactor = heightPosition * 0.05;
+        g.drawRect(widthPosition+(separationWidth*3), heightPosition, cardWidth, cardHeight); // moneta 1
+        g.drawRect(widthPosition+(separationWidth*3) + (int) separationWidthCoinFactor, heightPosition + (int) separationHeightCoinFactor, cardWidth, cardHeight); // moneta 2
+        g.drawRect(widthPosition+(separationWidth*3) + (int) separationWidthCoinFactor*2, heightPosition + (int) separationHeightCoinFactor*2, cardWidth, cardHeight); // moneta 3
+        g.drawRect(widthPosition+(separationWidth*3) + (int) separationWidthCoinFactor*3, heightPosition + (int) separationHeightCoinFactor*3, cardWidth, cardHeight); // moneta 4
 
-        //g.drawRect(p+310, 390, 80, 100); // obszar na karty innych statków
-        g.drawRect(widthPosition+320, 400, cardWidth, cardHeight); // karta statku 1
-        g.drawRect(widthPosition+330, 410, cardWidth, cardHeight); // karta statku 2
-        g.drawRect(widthPosition+340, 420, cardWidth, cardHeight); // karta statku 3
-*/
+        // karty innych statków
+        g.drawRect(widthPosition+(separationWidth*4) + (int) separationWidthCoinFactor*3, heightPosition, cardWidth, cardHeight); // karta innego statku 1
+        g.drawRect(widthPosition+(separationWidth*4) + (int) separationWidthCoinFactor*4, heightPosition + (int) separationHeightCoinFactor, cardWidth, cardHeight); // karta innego statku 2
+        g.drawRect(widthPosition+(separationWidth*4) + (int) separationWidthCoinFactor*5, heightPosition + (int) separationHeightCoinFactor*2, cardWidth, cardHeight); // karta innego statku 3
+        g.drawRect(widthPosition+(separationWidth*4) + (int) separationWidthCoinFactor*6, heightPosition + (int) separationHeightCoinFactor*3, cardWidth, cardHeight); // karta innego statku 4
 
- /*g.setColor(new Color(45, 47, 15));
-        g.fillRect(((int)(Display.getWidth() * 0.333)-10), 320, 160, 60);*/
+        // testowy kolor dowolnego pola
+        //g.setColor(new Color(150, 150, 200));
+        //g.fillRect(widthPosition+(separationWidth*4) + (int) separationWidthCoinFactor*3, heightPosition, cardWidth, cardHeight);
+
 
 
     }
