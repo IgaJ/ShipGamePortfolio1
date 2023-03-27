@@ -1,4 +1,4 @@
-package kids.game;
+package ship.game;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
